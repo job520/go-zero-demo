@@ -1,0 +1,15 @@
+type (
+	Req {
+		Id int64 `path:"id"`
+	}
+	Reply {
+		Id   int64  `json:"id"`
+		Name string `json:"name"`
+	}
+)
+service mapi {
+	@handler getMapi
+	get /mapi/get/:id (Req) returns (Reply)  // 单体服务
+	@handler getMrpc
+	get /mrpc/get/:id (Req) returns (Reply)  // 微服务
+}

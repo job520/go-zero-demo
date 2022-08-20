@@ -1,0 +1,13 @@
+syntax = "proto3";
+package mrpc;
+option go_package = "./mrpc";
+message Req {
+    int64 id = 1;
+}
+message Reply {
+    int64 id = 1;
+    string name = 2;
+}
+service Mrpc {
+    rpc GetById (Req) returns (Reply);
+}
