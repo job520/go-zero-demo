@@ -2,7 +2,7 @@
 
 ### 开发环境搭建
 1. 安装`golang`
-[参见：源码安装 golang](/docs/a/a-1c4jg0orss8fm)
+[参见：源码安装 golang](https://www.jianshu.com/p/a67f070dbc8f)
 
 2. 开启`go module`
 `go env -w GO111MODULE=on`
