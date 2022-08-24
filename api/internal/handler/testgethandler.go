@@ -9,7 +9,7 @@ import (
 	"github.com/zeromicro/go-zero/rest/httpx"
 )
 
-func getMapiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
+func testGetHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var req types.Req
 		if err := httpx.Parse(r, &req); err != nil {
@@ -17,8 +17,8 @@ func getMapiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 			return
 		}
 
-		l := logic.NewGetMapiLogic(r.Context(), svcCtx)
-		resp, err := l.GetMapi(&req)
+		l := logic.NewTestGetLogic(r.Context(), svcCtx)
+		resp, err := l.TestGet(&req)
 		if err != nil {
 			httpx.Error(w, err)
 		} else {

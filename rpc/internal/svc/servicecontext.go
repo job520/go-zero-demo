@@ -1,20 +1,13 @@
 package svc
 
-import (
-	"demo/model"
-	"demo/rpc/internal/config"
-	"github.com/zeromicro/go-zero/core/stores/sqlx"
-)
+import "demo/rpc/internal/config"
 
 type ServiceContext struct {
-	Config      config.Config
-	MtableModel model.MtableModel
+	Config config.Config
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
-	conn := sqlx.NewMysql(c.Mysql.DataSource)
 	return &ServiceContext{
-		Config:      c,
-		MtableModel: model.NewMtableModel(conn, c.CacheRedis),
+		Config: c,
 	}
 }

@@ -2,10 +2,10 @@
 package types
 
 type Req struct {
-	Id int64 `path:"id"`
+	Id string `path:"id"`
 }
 
-type Reply struct {
-	Id   int64  `json:"id"`
+type Resp struct {
+	Id   string `json:"id"`
 	Name string `json:"name"`
 }

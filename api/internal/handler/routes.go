@@ -14,13 +14,8 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 		[]rest.Route{
 			{
 				Method:  http.MethodGet,
-				Path:    "/mapi/get/:id",
-				Handler: getMapiHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodGet,
-				Path:    "/mrpc/get/:id",
-				Handler: getMrpcHandler(serverCtx),
+				Path:    "/test/:id",
+				Handler: testGetHandler(serverCtx),
 			},
 		},
 	)
