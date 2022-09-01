@@ -28,5 +28,8 @@ func (l *TestGetLogic) TestGet(req *types.Req) (resp *types.Resp, err error) {
 	// 调用 go-zero-rpc
 	ret, err := l.svcCtx.TestRpc.Test(l.ctx, &testclient.Req{})
 	logx.Info(ret, err)
-	return &types.Resp{}, nil
+	return &types.Resp{
+		Id:   "1",
+		Name: l.svcCtx.Config.TestValue,
+	}, nil
 }

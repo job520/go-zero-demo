@@ -7,5 +7,6 @@ import (
 
 type Config struct {
 	rest.RestConf
-	TestRpc zrpc.RpcClientConf
+	TestRpc   zrpc.RpcClientConf
+	TestValue string
 }
